@@ -7,11 +7,12 @@ package Item;
 
 /**
  *
- * @author 201604940043
+ * @author ian
  */
-public class Items {
-    int heal;
-    int antidote;
-    int weapon;
-    int helmet;
+public class ItemHeal extends Item {
+    
+    public ItemHeal(String name, int weight, int capacity) {
+        super(name, weight, capacity);
+    }
+    
 }

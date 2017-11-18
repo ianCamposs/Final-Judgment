@@ -2,69 +2,30 @@ package Personagem;
 
 public abstract class Survivor {
     
-   private String name;
    private int life;
-   private int attack;
-   private int defense;
-   private int inffection;
+   private int infection;
    private int precision;
-   private int hunger;
    private int agility;
-
-   
-   private int setLife(int life){
-       return this.life;
+ 
+   public Survivor(int life,int infection,int precision,int agility){
+       this.life = life;
+       this.infection = infection;
+       this.agility = agility;
    }
    
    public int getLife(){
-        return life = 100 ;
+        return life;
     }
-   
-   private int setAttack(int attack){
-       return this.attack;
+     
+   public int getInfection(){
+       return infection;
    }
-   
-   public int getAttack(){
-        return attack = 0;
-    }
-   
-   private int setDefense(int defense){
-       return this.defense;
-   }
-   
-   public int getDefense(){
-       return defense = 0;
-   }
-   
-   private int setInffection(int inffection){
-       return this.inffection;
-   }
-   
-   public int getInffection(){
-       return inffection = 1;
-   }
-   
-   private int setPrecision(int precision){
-       return this.precision;
-   }
-   
+    
    public int getPrecision(){
-       return precision = 25;
-   }
-   
-   private int setHunger(int hunger){
-       return this.hunger;
-   }
-   
-   public int getHunger(){
-       return hunger = 0;
-   }
-  
-   private int setAgility(int agility){
-       return this.agility;
+       return precision;
    }
    
    public int getAgility(){
-       return agility = 25;
+       return agility;
    } 
 }
