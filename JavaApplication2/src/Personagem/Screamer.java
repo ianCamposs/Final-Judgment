@@ -15,12 +15,4 @@ public class Screamer extends Infected{
         super(life+(infection/4), attack+(infection/4), defense+(infection/4), infection, agility);
     }
     
-    public void TerribleScream(Infected Screamer,Survivor personagem){
-        personagem.getFear(){
-        return fear*2;
-        }
-    }
-    
-    
-    
 }

@@ -26,8 +26,16 @@ public class ItemHeal extends Item {
         if(life == 100){
             System.out.print("Your life is already full!");
         }else{
-            life =  this.heal + (life-infection);
-        }  
+            int curar;
+            curar = life + heal + infection;
+            if ((curar-100) == 0){
+                life = curar-infection;
+            } else {
+                heal = curar - 100;
+                curar = curar - heal;
+                life = curar-infection;
+                }
+            }  
         return life;
     }           
 }

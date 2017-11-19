@@ -1,7 +1,6 @@
 
 package Personagem;
 
-
 public abstract class Infected {
     
    private int life; 
@@ -36,4 +35,12 @@ public abstract class Infected {
    public int getAgility(){
        return agility;
    }
+
+   public int FearGenerator(Infected monster,Survivor personagem){ 
+       int func = 0;
+       boolean x = true;
+       int y = 10;
+       func = personagem.plusFear(x,y);
+       return func;
+    }
 }

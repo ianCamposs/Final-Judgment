@@ -1,5 +1,7 @@
 package Personagem;
 
+import java.lang.Math;
+        
 public abstract class Survivor {
     
    private int life;
@@ -16,6 +18,38 @@ public abstract class Survivor {
        this.fear = fear;
    }
    
+   public int plusFear(boolean a, int x){
+       if (a == true){
+           this.fear = this.fear+x;
+       }else if (a == false){
+           if( this.fear < x){
+               this.fear = 0;
+           }else
+               this.fear = this.fear-x;
+       }
+       return this.fear;
+   };
+
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public void setInfection(int infection) {
+        this.infection = infection;
+    }
+
+    public void setPrecision(int precision) {
+        this.precision = precision;
+    }
+
+    public void setAgility(int agility) {
+        this.agility = agility;
+    }
+
+    public void setFear(int fear) {
+        this.fear = fear;
+    }
+   
    public int getLife(){
         return life;
     }
@@ -31,17 +65,9 @@ public abstract class Survivor {
    public int getAgility(){
        return agility;
    }
-   
-   public int getFear(boolean a, int x){
-       if(a == true){
-        return fear+x;
-       }else    
-           if(fear < x){
-                    fear = 0;
-       }else{
-             fear = fear - x;  
-           }   
-       return fear;
-   }
+
+    public int getFear() {
+        return fear;
+    }
 }
 
