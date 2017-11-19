@@ -17,6 +17,9 @@ public abstract class Infected {
        this.infection = inffection;
        this.agility = agility;
    } 
+   public int getLife(){
+        return life;
+    }
    
    public int getAttack(){
        return attack;
@@ -25,10 +28,6 @@ public abstract class Infected {
    public int getDefense(){
        return defense;
    }
-   
-   public int getLife(){
-        return life;
-    }
      
    public int getInfection(){
        return infection;

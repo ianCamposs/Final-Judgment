@@ -11,8 +11,8 @@ package Personagem;
  */
 public class Soldier extends Survivor{
     
-    public Soldier(int life, int infection, int precision, int agility) {
-        super(life, infection, precision * 2 , agility);
+    public Soldier(int life, int infection, int precision, int agility, int fear) {
+        super(life, infection, precision * 2 , agility, fear);
     }
     
     

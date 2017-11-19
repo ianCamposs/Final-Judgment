@@ -13,8 +13,8 @@ import Personagem.Survivor;
  */
 public class Athlete extends Survivor{ //Rapido
 
-    public Athlete(int life, int infection, int precision, int agility) {
-        super(life, infection, precision, agility * 2);
+    public Athlete(int life, int infection, int precision, int agility, int fear){
+        super(life, infection, precision, agility * 2, fear);
     }
     
     

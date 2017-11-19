@@ -11,8 +11,15 @@ package Item;
  */
 public class ItemHeal extends Item {
     
+    int heal;
     public ItemHeal(String name, int weight, int capacity) {
         super(name, weight, capacity);
+    }
+    
+    public int getHeal(){
+        if(heal < 0)
+            throw new IllegalArgumentException("You can not create a item with heal less than 0");
+        return heal;
     }
     
 }

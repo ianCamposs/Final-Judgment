@@ -5,20 +5,19 @@
  */
 package Item;
 
-import Personagem.Soldier;
-
 
 
 /**
  *
  * @author ian
  */
-public abstract class ItemAntidote extends Item {
+public class ItemAntidote extends Item {
     
     int antidote;
-    public Soldier personagem = new Soldier();
     
     public int getAntidote(){
+        if(antidote < 0)
+            throw new IllegalArgumentException("You can not create a item with antidote less than 0");
         return antidote;
     }
     
@@ -27,7 +26,12 @@ public abstract class ItemAntidote extends Item {
     }
     
     public int infectioncure(int antidote, int infection){
-        return (infection - this.antidote);  
-    };
+        if(infection < this.antidote){
+            infection = 0;
+        }else{
+            infection = infection - this.antidote;
+        }
+        return infection;
+    }
     
 }

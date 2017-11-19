@@ -9,6 +9,10 @@ package Personagem;
  *
  * @author ian
  */
-public class Kacthoro {
+public class Kacthoro extends Infected{
+    
+    public Kacthoro(int life, int attack, int defense, int infection, int agility){
+        super(life +(infection/2) , attack+(infection/2), defense+(infection/2), infection, agility+(infection/2));
+    }
     
 }
