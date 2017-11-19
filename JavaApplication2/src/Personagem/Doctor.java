@@ -13,8 +13,8 @@ import Personagem.Survivor;
  */
 public class Doctor extends Survivor{ //Vida
 
-    public Doctor(int life, int infection, int precision, int agility, int fear) {
-        super(life, infection, precision, agility, fear);
+    public Doctor(String nome, int life, int infection, int precision, int agility, int fear) {
+        super(nome, life, infection, precision, agility, fear);
     }
     
     

@@ -11,8 +11,8 @@ package Personagem;
  */
 public class Screamer extends Infected{
     
-    public Screamer(int life, int attack, int defense, int infection, int agility) {
-        super(life+(infection/4), attack+(infection/4), defense+(infection/4), infection, agility);
+    public Screamer(String nome, int life, int attack, int defense, int infection, int agility) {
+        super(nome, life+(infection/4), attack+(infection/4), defense+(infection/4), infection, agility);
     }
     
 }

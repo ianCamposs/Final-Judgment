@@ -4,13 +4,15 @@ import java.lang.Math;
         
 public abstract class Survivor {
     
+   private String nome;
    private int life;
    private int infection;
    private int precision;
    private int agility;
    private int fear;
  
-   public Survivor(int life,int infection,int precision,int agility,int fear){
+   public Survivor(String nome, int life,int infection,int precision,int agility,int fear){
+       this.nome = nome;
        this.life = life;
        this.infection = infection;
        this.precision = precision;

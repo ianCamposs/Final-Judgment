@@ -5,6 +5,8 @@
  */
 package City;
 
+import Personagem.Infected;
+
 /**
  *
  * @author 201604940043
@@ -12,15 +14,12 @@ package City;
 public abstract class City {
     
     String name;
-    int infected;
+    Infected monster; // falta ver se é isso mesmo que tem que fazer, se vai ser public/private/protected...
     int items;
     
     public String setName(){
         return this.name;
         
-    }
-    public int setInfected(){
-        return this.infected;
     }
     
     public int setItems(){

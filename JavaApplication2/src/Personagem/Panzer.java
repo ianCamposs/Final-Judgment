@@ -11,8 +11,8 @@ package Personagem;
  */
 public class Panzer extends Infected{
     
-    public Panzer(int life, int attack, int defense, int infection, int agility){
-        super(life+infection, attack+infection, defense+infection, infection, agility);
+    public Panzer(String nome, int life, int attack, int defense, int infection, int agility){
+        super(nome, life+infection, attack+infection, defense+infection, infection, agility);
     }
     
 }
