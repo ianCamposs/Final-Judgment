@@ -25,7 +25,7 @@ public class ItemAntidote extends Item {
         super(name, weight, capacity);
     }
     
-    public int infectioncure(int antidote, int infection){
+    public int InfectionCure(int antidote, int infection){
         if(infection < this.antidote){
             infection = 0;
         }else{

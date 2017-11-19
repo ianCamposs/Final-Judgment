@@ -22,4 +22,12 @@ public class ItemHeal extends Item {
         return heal;
     }
     
+    public int Heal(int heal, int life , int infection){
+        if(life == 100){
+            System.out.print("Your life is already full!");
+        }else{
+            life =  this.heal + (life-infection);
+        }  
+        return life;
+    }           
 }
