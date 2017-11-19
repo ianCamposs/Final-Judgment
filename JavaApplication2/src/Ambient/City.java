@@ -9,6 +9,10 @@ package Ambient;
  *
  * @author ian
  */
-public class City {
+public class City extends Ambient {
+    
+    public City(String name, int monsters, int items) {
+        super(name, monsters, items);
+    }
     
 }

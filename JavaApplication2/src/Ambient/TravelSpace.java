@@ -9,6 +9,10 @@ package Ambient;
  *
  * @author ian
  */
-public class TravelSpace {
+public class TravelSpace extends Ambient {
+    
+    public TravelSpace(String name, int monsters, int items) {
+        super(name, monsters, items);
+    }
     
 }
