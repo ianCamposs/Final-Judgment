@@ -27,6 +27,41 @@ public class Backpack {
         actualyWeight = 0;
         actualyCapacity = 0;
     }
+
+    public boolean insertItem(Item item){
+        System.out.println("Inserting Item...");
+        if(actualyCapacity >= limitCapacity){
+            return false;
+        }
+        if(actualyWeight+item.getWeight() > limitWeight){
+            return false;
+        }
+        items.add(item);
+        actualyWeight+=item.getWeight();
+        actualyCapacity++;
+        return true;
+        
+    }
+    
+    public Item removeItem(int indice){
+        try{
+            Item item = items.remove(indice);
+            actualyWeight -= item.getWeight();
+            actualyCapacity--;
+            return item;
+        }catch (ArrayIndexOutOfBoundsException e){
+            return null;
+        }
+    }
+
+    
+    public String[] listItems(){
+        String[] itens = new String[actualyCapacity];
+        for (int i=0; i<actualyCapacity; i++) {
+            itens[i] = this.items.get(i).getName();
+        }
+        return itens;
+    }
     
     
 }

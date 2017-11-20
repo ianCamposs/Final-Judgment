@@ -5,14 +5,24 @@
  */
 package Item;
 
+import Personagem.Survivor;
+
+
 /**
  *
  * @author ian
  */
 public class Shotgun extends Guns{
+
     
     public Shotgun(String name, int weight, int capacity) {
         super(name, weight, capacity);
+    }
+
+    @Override
+    public void EquipGun(Survivor personagem, String maos) {
+        personagem.setPrimaria(this);
+        this.personagem = personagem;
     }
     
 }

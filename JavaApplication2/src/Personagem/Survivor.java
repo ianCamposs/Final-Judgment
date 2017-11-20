@@ -1,6 +1,7 @@
 package Personagem;
 
-import java.lang.Math;
+import Item.Guns;
+import Item.Weapons;
         
 public abstract class Survivor {
     
@@ -10,6 +11,8 @@ public abstract class Survivor {
    private int precision;
    private int agility;
    private int fear;
+   private Guns primaria;
+   private Weapons secundaria;
  
    public Survivor(String nome, int life,int infection,int precision,int agility,int fear){
        this.nome = nome;
@@ -19,7 +22,7 @@ public abstract class Survivor {
        this.agility = agility;
        this.fear = fear;
    }
-   
+
    public int plusFear(boolean a, int x){
        if (a == true){
            this.fear = this.fear+x;
@@ -32,6 +35,18 @@ public abstract class Survivor {
        return this.fear;
    };
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPrimaria(Guns primaria) {
+        this.primaria = primaria;
+    }
+
+    public void setSecundaria(Weapons secundaria) {
+        this.secundaria = secundaria;
+    }
+   
     public void setLife(int life) {
         this.life = life;
     }
@@ -50,6 +65,18 @@ public abstract class Survivor {
 
     public void setFear(int fear) {
         this.fear = fear;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Guns getPrimaria() {
+        return primaria;
+    }
+
+    public Weapons getSecundaria() {
+        return secundaria;
     }
    
    public int getLife(){
@@ -71,5 +98,6 @@ public abstract class Survivor {
     public int getFear() {
         return fear;
     }
+
 }
 

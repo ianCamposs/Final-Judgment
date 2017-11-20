@@ -5,6 +5,8 @@
  */
 package Item;
 
+import Personagem.Survivor;
+
 /**
  *
  * @author ian
@@ -13,6 +15,12 @@ public class IronBar extends Weapons{
     
     public IronBar(String name, int weight, int capacity) {
         super(name, weight, capacity);
+    }
+
+    @Override
+    public void EquipWeapon(Survivor personagem, String maos) {
+        personagem.setSecundaria(this);
+        this.personagem = personagem;
     }
     
 }

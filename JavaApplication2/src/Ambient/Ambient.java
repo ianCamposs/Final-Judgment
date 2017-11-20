@@ -16,6 +16,9 @@ public abstract class Ambient {
     int items;
     //Pensei assim, deixa um int monsters, ai esse valor que for passado no parametro 
     //vai ser uma string de monstros que vai ser criado na main :D
+    
+    //
+    // To pensando em a gente fazer ja pre definido futuramente, colocando um for e tal... mas vou ter que ver como criam varios objetos com valores diferentes da mesma classe.
     public Ambient(String name, int monsters , int items){
         this.name = name;
         this.monsters = monsters;
