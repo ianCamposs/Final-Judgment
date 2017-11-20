@@ -29,7 +29,6 @@ public class Backpack {
     }
 
     public boolean insertItem(Item item){
-        System.out.println("Inserting Item...");
         if(actualyCapacity >= limitCapacity){
             return false;
         }

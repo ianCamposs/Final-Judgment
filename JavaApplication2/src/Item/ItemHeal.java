@@ -5,6 +5,8 @@
  */
 package Item;
 
+import Personagem.Survivor;
+
 /**
  *
  * @author ian
@@ -22,20 +24,22 @@ public class ItemHeal extends Item {
         return heal;
     }
     
-    public int Heal(int heal, int life , int infection){
-        if(life == 100){
+    public int Heal(int heal, Survivor personagem){
+        int x = personagem.getInfection();
+        int y = personagem.getLife();
+        if(y == 100){
             System.out.print("Your life is already full!");
         }else{
             int curar;
-            curar = life + heal + infection;
+            curar = y + heal + x;
             if ((curar-100) == 0){
-                life = curar-infection;
+                y = curar - x;
             } else {
                 heal = curar - 100;
                 curar = curar - heal;
-                life = curar-infection;
+                y = curar-x;
                 }
             }  
-        return life;
+        return y;
     }           
 }

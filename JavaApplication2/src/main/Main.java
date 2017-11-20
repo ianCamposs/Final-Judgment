@@ -27,9 +27,7 @@ public class Main {
         Survivor personagem = new Soldier(a,30,1,40,50,10); // CRIANDO OBJETO PERSONAGEM SURVIVOR
         Infected screamer = new Screamer("screamer",50,10,10,10,10); //CRIANDO OBJETO SCREAMER INFECTED
         
-        System.out.println("Fear1: "+ personagem.getFear());             // INICIALMENTE O MEDO DO PERSONAGEM ERA 10.
-        screamer.FearGenerator(screamer, personagem);                   //MEDO CAUSADO PELO INFECTED SCREAMER PARA O SURVIVOR PERSONAGEM
-        System.out.println("Fear2: "+ personagem.getFear());// APÓS O MEDO CAUSADO PASSOU A SER 20.
+        System.out.println("Equipando itens na mochila: \n");
         
         personagem.setBackpack(new Backpack(15,40));
         
@@ -43,6 +41,8 @@ public class Main {
         personagem.getBackpack().insertItem(knife);
         personagem.getBackpack().insertItem(antidote);
         
+        System.out.println("Os seguintes itens foram guardados na mochila: ");
+        
         String[] items = personagem.getBackpack().listItems();
         System.out.println(Arrays.toString(items));
         
@@ -50,14 +50,17 @@ public class Main {
         if(i instanceof Guns){
             Guns guns = (Guns) i;
             guns.EquipGun(personagem);
-        }
+        } else
+                System.out.println("Este item não é equipavel.");
         
-        Item j = personagem.getBackpack().removeItem(2);
+        Item j = personagem.getBackpack().removeItem(1);
         if(j instanceof Weapons){
             Weapons weapon = (Weapons) j;
             weapon.EquipWeapon(personagem);
-        }
+        }else
+            System.out.println("Este item não é equipavel.");
         
+        System.out.println("O personagem equipou 2 itens: \n");
         System.out.println("Arma primaria: "+ personagem.getPrimaria().getItemName());
         System.out.println("Arma secundaria: "+ personagem.getSecundaria().getItemName());
         
