@@ -19,7 +19,7 @@ public class Rifle extends Guns{
     }
 
     @Override
-    public void EquipGun(Survivor personagem, String maos) {
+    public void EquipGun(Survivor personagem) {
         personagem.setPrimaria(this);
         this.personagem = personagem;
     }

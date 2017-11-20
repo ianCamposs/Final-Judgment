@@ -58,7 +58,7 @@ public class Backpack {
     public String[] listItems(){
         String[] itens = new String[actualyCapacity];
         for (int i=0; i<actualyCapacity; i++) {
-            itens[i] = this.items.get(i).getName();
+            itens[i] = this.items.get(i).getItemName();
         }
         return itens;
     }

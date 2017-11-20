@@ -18,7 +18,7 @@ public class IronBar extends Weapons{
     }
 
     @Override
-    public void EquipWeapon(Survivor personagem, String maos) {
+    public void EquipWeapon(Survivor personagem) {
         personagem.setSecundaria(this);
         this.personagem = personagem;
     }

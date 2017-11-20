@@ -19,5 +19,5 @@ public abstract class Guns extends Item{
         super(name, weight, capacity);
     }
 
-    public abstract void EquipGun(Survivor personagem, String maos);
+    public abstract void EquipGun(Survivor personagem);
 }

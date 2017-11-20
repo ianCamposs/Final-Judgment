@@ -1,11 +1,13 @@
 package Personagem;
 
+import Item.Backpack;
 import Item.Guns;
 import Item.Weapons;
         
 public abstract class Survivor {
     
    private String nome;
+   private Backpack backpack;
    private int life;
    private int infection;
    private int precision;
@@ -99,5 +101,14 @@ public abstract class Survivor {
         return fear;
     }
 
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+
+    
 }
 

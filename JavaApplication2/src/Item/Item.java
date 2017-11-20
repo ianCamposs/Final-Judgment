@@ -3,7 +3,7 @@ package Item;
 
 public abstract class Item {
     
-    private String name;
+    private String itemName;
     private int weight;
     private int capacity;
     
@@ -12,15 +12,15 @@ public abstract class Item {
             throw new IllegalArgumentException("You can not create a item with weight less than 0");
         if(capacity < 0)
             throw new IllegalArgumentException("You can not create a item with capacity less than 0");
-        this.name = name;
+        this.itemName = name;
         this.weight = weight;
         this.capacity = capacity;
     }
     
     
     
-    public String getName(){
-        return name;
+    public String getItemName(){
+        return itemName;
     }
     
     public int getWeight(){
