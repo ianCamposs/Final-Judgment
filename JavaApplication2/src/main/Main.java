@@ -23,14 +23,10 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
-        
-        Survivor personagem = new Soldier(a,30,1,40,50,10); // CRIANDO OBJETO PERSONAGEM SURVIVOR
-        Infected screamer = new Screamer("screamer",50,10,10,10,10); //CRIANDO OBJETO SCREAMER INFECTED
-        
+        Survivor personagem = new Soldier(a,30,1,40,50,10);
+        Infected screamer = new Screamer("screamer",50,10,10,10,10);
         System.out.println("Equipando itens na mochila: \n");
-        
         personagem.setBackpack(new Backpack(15,40));
-        
         Item m4a1 = new Rifle("m4a1",5,5);
         Item potion = new ItemHeal("HP",1,1);
         Item knife = new Knife("knife",3,3);
@@ -59,10 +55,12 @@ public class Main {
             weapon.EquipWeapon(personagem);
         }else
             System.out.println("Este item não é equipavel.");
-        
         System.out.println("O personagem equipou 2 itens: \n");
         System.out.println("Arma primaria: "+ personagem.getPrimaria().getItemName());
-        System.out.println("Arma secundaria: "+ personagem.getSecundaria().getItemName());
+        System.out.println("Arma secundaria: "+ personagem.getSecundaria().getItemName());   
+        System.out.println("\nO personagem encontrou um monstro infectado e se assutou. Seu medo era de: "+ personagem.getFear());
+        screamer.FearGenerator(screamer, personagem);
+        System.out.println("O monstro era um screamer que aumentou o medo do personagem para: "+ personagem.getFear());
         
     }
     

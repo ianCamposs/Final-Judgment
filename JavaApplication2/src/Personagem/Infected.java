@@ -18,6 +18,24 @@ public abstract class Infected {
        this.infection = inffection;
        this.agility = agility;
    }
+   
+   public int FearGenerator(Infected monster,Survivor personagem){ 
+       int func = personagem.getFear();
+       if(monster.nome.equals("screamer")){ 
+           boolean x = true;
+           int y = 10;
+           func = personagem.plusFear(x,y);
+       } else if(monster.nome.equals("kacthoro")){
+                    boolean x = true;
+                    int y = 3;
+                    func = personagem.plusFear(x,y);
+              } else if(monster.nome.equals("panzer")){
+                        boolean x = true;
+                        int y = 6;
+                        func = personagem.plusFear(x,y); 
+                       }
+       return func;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -66,15 +84,4 @@ public abstract class Infected {
    public int getAgility(){
        return agility;
    }
-
-   public int FearGenerator(Infected monster,Survivor personagem){ 
-       int func = 0;
-       if(monster.nome.equals("screamer")){ //TODO: Precisa colocar os outros monstros no gerador de medo com seus respectivos nomes.
-           boolean x = true;
-           int y = 10;
-           func = personagem.plusFear(x,y);
-       } else {
-       }
-       return func;
-    }
 }
