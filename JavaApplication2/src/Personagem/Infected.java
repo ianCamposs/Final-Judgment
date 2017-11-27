@@ -20,20 +20,9 @@ public abstract class Infected {
    }
    
    public int FearGenerator(Infected monster,Survivor personagem){ 
-       int func = personagem.getFear();
-       if(monster.nome.equals("screamer")){ 
            boolean x = true;
-           int y = 10;
-           func = personagem.plusFear(x,y);
-       } else if(monster.nome.equals("kacthoro")){
-                    boolean x = true;
-                    int y = 3;
-                    func = personagem.plusFear(x,y);
-              } else if(monster.nome.equals("panzer")){
-                        boolean x = true;
-                        int y = 6;
-                        func = personagem.plusFear(x,y); 
-                       }
+           int y = monster.getValue();
+           int func = personagem.plusFear(x,y);
        return func;
     }
 
@@ -84,4 +73,6 @@ public abstract class Infected {
    public int getAgility(){
        return agility;
    }
+   
+   public abstract int getValue();
 }

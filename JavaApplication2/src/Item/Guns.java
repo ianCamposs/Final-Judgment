@@ -17,7 +17,7 @@ public abstract class Guns extends Item{
     //this kind of item will need ammunition to use
     public Guns(String name, int weight, int capacity) {
         super(name, weight, capacity);
-    }
-
+    } 
+    
     public abstract void EquipGun(Survivor personagem);
 }

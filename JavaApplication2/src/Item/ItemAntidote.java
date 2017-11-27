@@ -33,5 +33,5 @@ public class ItemAntidote extends Item {
         }
         return infection;
     }
-    
+
 }

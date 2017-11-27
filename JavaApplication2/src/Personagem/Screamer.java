@@ -14,5 +14,10 @@ public class Screamer extends Infected{
     public Screamer(String nome, int life, int attack, int defense, int infection, int agility) {
         super(nome, life+(infection/4), attack+(infection/4), defense+(infection/4), infection, agility);
     }
+
+    @Override
+    public int getValue() {
+        return 10;
+    }
     
 }

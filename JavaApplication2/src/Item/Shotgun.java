@@ -24,5 +24,5 @@ public class Shotgun extends Guns{
         personagem.setPrimaria(this);
         this.personagem = personagem;
     }
-    
+
 }

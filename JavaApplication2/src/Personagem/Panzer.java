@@ -14,5 +14,10 @@ public class Panzer extends Infected{
     public Panzer(String nome, int life, int attack, int defense, int infection, int agility){
         super(nome, life+infection, attack+infection, defense+infection, infection, agility);
     }
+
+    @Override
+    public int getValue() {
+        return 6;
+    }
     
 }

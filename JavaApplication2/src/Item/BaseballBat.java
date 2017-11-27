@@ -22,5 +22,5 @@ public class BaseballBat extends Weapons{
         personagem.setSecundaria(this);
         this.personagem = personagem;
     }
-    
+
 }

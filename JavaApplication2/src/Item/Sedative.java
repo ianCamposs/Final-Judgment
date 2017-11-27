@@ -5,13 +5,15 @@
  */
 package Item;
 
+import Personagem.Survivor;
+
 /**
  *
  * @author ian
  */
 public class Sedative extends Item{
     
-    int sedative;
+    int sedative = 10;
     
     public Sedative(String name, int weight, int capacity) {
         super(name, weight, capacity);
@@ -23,13 +25,10 @@ public class Sedative extends Item{
         return sedative;
     }
     
-    public int UseSedative(int sedative, int fear){
-        if(fear < this.sedative){
-            fear = 0;
-        }else{
-            fear = fear - this.sedative;
-        }
-        return fear;
+    public int UseSedative(Item sedativo, Survivor personagem, int indice){
+        int func = personagem.getFear();
+        func = func - 10;
+        return func;
     }
     
 }

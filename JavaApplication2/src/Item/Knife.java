@@ -22,5 +22,6 @@ public class Knife extends Weapons {
         personagem.setSecundaria(this);
         this.personagem = personagem;
     }
+
     
 }

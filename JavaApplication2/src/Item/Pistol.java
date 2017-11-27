@@ -23,6 +23,5 @@ public class Pistol extends Guns{
         personagem.setPrimaria(this);
         this.personagem = personagem;
     }
-
     
 }

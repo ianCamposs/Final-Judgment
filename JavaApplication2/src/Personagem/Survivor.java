@@ -2,6 +2,7 @@ package Personagem;
 
 import Item.Backpack;
 import Item.Guns;
+import Item.Item;
 import Item.Weapons;
         
 public abstract class Survivor {
@@ -109,6 +110,9 @@ public abstract class Survivor {
         this.backpack = backpack;
     }
 
+    public void interactItem(Item item, Survivor personagem){
+        
+    }
     
 }
 

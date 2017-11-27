@@ -11,6 +11,7 @@ import Item.Knife;
 import Item.Rifle;
 import Item.Weapons;
 import Personagem.Infected;
+import Personagem.Kacthoro;
 import Personagem.Screamer;
 import Personagem.Soldier;
 import Personagem.Survivor;
@@ -24,7 +25,7 @@ public class Main {
         System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
         Survivor personagem = new Soldier(a,30,1,40,50,10);
-        Infected screamer = new Screamer("screamer",50,10,10,10,10);
+        Infected dog = new Kacthoro("dog",50,10,10,10,10);
         System.out.println("Equipando itens na mochila: \n");
         personagem.setBackpack(new Backpack(15,40));
         Item m4a1 = new Rifle("m4a1",5,5);
@@ -59,8 +60,8 @@ public class Main {
         System.out.println("Arma primaria: "+ personagem.getPrimaria().getItemName());
         System.out.println("Arma secundaria: "+ personagem.getSecundaria().getItemName());   
         System.out.println("\nO personagem encontrou um monstro infectado e se assutou. Seu medo era de: "+ personagem.getFear());
-        screamer.FearGenerator(screamer, personagem);
-        System.out.println("O monstro era um screamer que aumentou o medo do personagem para: "+ personagem.getFear());
+        dog.FearGenerator(dog, personagem);
+        System.out.println("O monstro era um katchoro que aumentou o medo do personagem para: "+ personagem.getFear());
         
     }
     

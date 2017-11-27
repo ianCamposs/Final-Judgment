@@ -22,5 +22,5 @@ public class IronBar extends Weapons{
         personagem.setSecundaria(this);
         this.personagem = personagem;
     }
-    
+
 }
