@@ -13,17 +13,12 @@ import Personagem.Survivor;
  */
 public class ItemAdrenaline extends Item{
     
-    int adrenaline = 10;
     
-    public ItemAdrenaline(String name, int weight, int capacity) {
-        super(name, weight, capacity);
-    }
     
-    public int getAdrenaline(){
-        if(adrenaline < 0)
-            throw new IllegalArgumentException("You can not create a item with adrenaline less than 0");
-        return adrenaline;
+    public ItemAdrenaline(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
+   
     
     public int UseAdrenaline(Item adrenaline, Survivor personagem, int indice){
         int func = personagem.getFear();

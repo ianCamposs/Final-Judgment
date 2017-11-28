@@ -11,9 +11,8 @@ package Item;
  */
 public abstract class Ammunition extends Item {
     
-    public Ammunition(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public Ammunition(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
-    
     
 }

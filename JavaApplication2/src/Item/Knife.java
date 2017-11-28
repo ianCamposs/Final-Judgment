@@ -13,8 +13,8 @@ import Personagem.Survivor;
  */
 public class Knife extends Weapons {
     
-    public Knife(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public Knife(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
 
     @Override

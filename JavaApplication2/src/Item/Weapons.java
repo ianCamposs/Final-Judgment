@@ -15,8 +15,8 @@ public abstract class Weapons extends Item{
    
     protected Survivor personagem;
     //this kind of item to do damage, will not consume ammunition
-    public Weapons(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public Weapons(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
 
     public abstract void EquipWeapon(Survivor personagem);

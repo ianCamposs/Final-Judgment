@@ -13,8 +13,8 @@ import Personagem.Survivor;
  */
 public class BaseballBat extends Weapons{
     
-    public BaseballBat(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public BaseballBat(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
 
     @Override

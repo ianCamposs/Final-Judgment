@@ -13,25 +13,19 @@ package Item;
  */
 public class ItemAntidote extends Item {
     
-    int antidote;
     
-    public int getAntidote(){
-        if(antidote < 0)
-            throw new IllegalArgumentException("You can not create a item with antidote less than 0");
-        return antidote;
+    
+    public ItemAntidote(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
     
-    public ItemAntidote(String name, int weight, int capacity) {
-        super(name, weight, capacity);
-    }
-    
-    public int InfectionCure(int antidote, int infection){
-        if(infection < this.antidote){
+    /*public int InfectionCure(int antidote, int infection){
+        if(infection < super.intensity){
             infection = 0;
         }else{
-            infection = infection - this.antidote;
+            infection = infection - super.intensity;
         }
         return infection;
     }
-
+    */
 }

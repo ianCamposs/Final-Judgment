@@ -28,10 +28,10 @@ public class Main {
         Infected dog = new Kacthoro("dog",50,10,10,10,10);
         System.out.println("Equipando itens na mochila: \n");
         personagem.setBackpack(new Backpack(15,40));
-        Item m4a1 = new Rifle("m4a1",5,5);
-        Item potion = new ItemHeal("HP",1,1);
-        Item knife = new Knife("knife",3,3);
-        Item antidote = new ItemAntidote("A-INF",1,1);
+        Item m4a1 = new Rifle("m4a1",5,5,5);
+        Item potion = new ItemHeal("HP",1,1,5);
+        Item knife = new Knife("knife",3,3,5);
+        Item antidote = new ItemAntidote("A-INF",1,1,5);
         
         personagem.getBackpack().insertItem(m4a1);
         personagem.getBackpack().insertItem(potion);

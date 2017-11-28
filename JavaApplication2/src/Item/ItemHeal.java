@@ -13,30 +13,23 @@ import Personagem.Survivor;
  */
 public class ItemHeal extends Item {
     
-    int heal;
-    public ItemHeal(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public ItemHeal(String name, int weight, int capacity, int intensity){
+        super(name, weight, capacity, intensity);
     }
-    
-    public int getHeal(){
-        if(heal < 0)
-            throw new IllegalArgumentException("You can not create a item with heal less than 0");
-        return heal;
-    }
-    
-    public int Heal(int heal, Survivor personagem){
+      
+    public int Heal(int intensity, Survivor personagem){
         int x = personagem.getInfection();
         int y = personagem.getLife();
         if(y == 100){
             System.out.print("Your life is already full!");
         }else{
             int curar;
-            curar = y + heal + x;
+            curar = y + intensity + x;
             if ((curar-100) == 0){
                 y = curar - x;
             } else {
-                heal = curar - 100;
-                curar = curar - heal;
+                intensity = curar - 100;
+                curar = curar - intensity;
                 y = curar-x;
                 }
             }  

@@ -13,8 +13,8 @@ import Personagem.Survivor;
  */
 public class IronBar extends Weapons{
     
-    public IronBar(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public IronBar(String name, int weight, int capacity, int intensity) {
+        super(name, weight, capacity, intensity);
     }
 
     @Override

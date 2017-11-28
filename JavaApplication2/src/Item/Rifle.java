@@ -14,8 +14,8 @@ import Personagem.Survivor;
 public class Rifle extends Guns{
 
     
-    public Rifle(String name, int weight, int capacity) {
-        super(name, weight, capacity);
+    public Rifle(String name, int weight, int capacity , int intensity) {
+        super(name, weight, capacity, intensity);
     }
 
     @Override
