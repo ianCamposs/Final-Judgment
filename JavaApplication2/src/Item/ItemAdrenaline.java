@@ -11,21 +11,21 @@ import Personagem.Survivor;
  *
  * @author ian
  */
-public class Sedative extends Item{
+public class ItemAdrenaline extends Item{
     
-    int sedative = 10;
+    int adrenaline = 10;
     
-    public Sedative(String name, int weight, int capacity) {
+    public ItemAdrenaline(String name, int weight, int capacity) {
         super(name, weight, capacity);
     }
     
-    public int getSedative(){
-        if(sedative < 0)
-            throw new IllegalArgumentException("You can not create a item with sedative less than 0");
-        return sedative;
+    public int getAdrenaline(){
+        if(adrenaline < 0)
+            throw new IllegalArgumentException("You can not create a item with adrenaline less than 0");
+        return adrenaline;
     }
     
-    public int UseSedative(Item sedativo, Survivor personagem, int indice){
+    public int UseAdrenaline(Item adrenaline, Survivor personagem, int indice){
         int func = personagem.getFear();
         func = func - 10;
         return func;
