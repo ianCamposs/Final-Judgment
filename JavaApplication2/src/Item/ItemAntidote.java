@@ -5,6 +5,8 @@
  */
 package Item;
 
+import Personagem.Survivor;
+
 
 
 /**
@@ -28,4 +30,9 @@ public class ItemAntidote extends Item {
         return infection;
     }
     */
+
+    @Override
+    public int usar(Item item, Survivor personagem) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

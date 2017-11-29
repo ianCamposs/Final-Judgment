@@ -37,6 +37,7 @@ public abstract class Survivor {
        }
        return this.fear;
    };
+   
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -111,7 +112,8 @@ public abstract class Survivor {
     }
 
     public void interactItem(Item item, Survivor personagem){
-        
+        item.usar(item, personagem);
+        System.out.println("usado");
     }
     
 }

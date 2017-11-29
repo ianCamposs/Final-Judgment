@@ -16,7 +16,7 @@ public class Panzer extends Infected{
     }
 
     @Override
-    public int getValue() {
+    public int Scare() {
         return 6;
     }
     

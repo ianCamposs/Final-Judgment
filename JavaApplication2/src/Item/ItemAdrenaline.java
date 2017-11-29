@@ -13,17 +13,22 @@ import Personagem.Survivor;
  */
 public class ItemAdrenaline extends Item{
     
-    
-    
     public ItemAdrenaline(String name, int weight, int capacity, int intensity) {
         super(name, weight, capacity, intensity);
     }
    
-    
-    public int UseAdrenaline(Item adrenaline, Survivor personagem, int indice){
-        int func = personagem.getFear();
-        func = func - 10;
-        return func;
+
+    @Override
+    public int usar(Item item, Survivor personagem) {
+        int x = personagem.getFear();
+        int y = item.getIntensity();
+        int w = x-y;
+        if(w < 0){
+        w = 0;
+        personagem.setFear(w);
+        }else
+            personagem.setFear(w);
+        return w;
     }
     
 }

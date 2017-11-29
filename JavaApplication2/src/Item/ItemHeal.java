@@ -16,8 +16,8 @@ public class ItemHeal extends Item {
     public ItemHeal(String name, int weight, int capacity, int intensity){
         super(name, weight, capacity, intensity);
     }
-      
-    public int Heal(int intensity, Survivor personagem){
+   /*   
+    public int Heal(Survivor personagem){
         int x = personagem.getInfection();
         int y = personagem.getLife();
         if(y == 100){
@@ -33,7 +33,25 @@ public class ItemHeal extends Item {
                 y = curar-x;
                 }
             }  
+        personagem.setLife(y);
         return y;
-    }           
+    }     */      
+
+    @Override
+    public int usar(Item item, Survivor personagem) {
+        //int x = personagem.getInfection();
+        int y = personagem.getLife();
+        int z = item.getIntensity();
+        if(y == 100){
+            System.out.print("Your life is already full!");
+        }else{
+            y += z;
+            if(y>100)
+                y = 100;
+        }
+        personagem.setLife(y);
+        
+        return y;
+    }
 
 }

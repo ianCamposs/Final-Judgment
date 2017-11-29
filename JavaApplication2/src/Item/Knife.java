@@ -23,5 +23,10 @@ public class Knife extends Weapons {
         this.personagem = personagem;
     }
 
+    @Override
+    public int usar(Item item, Survivor personagem) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

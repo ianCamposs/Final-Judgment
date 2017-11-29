@@ -19,11 +19,12 @@ public abstract class Infected {
        this.agility = agility;
    }
    
-   public int FearGenerator(Infected monster,Survivor personagem){ 
+   public void FearGenerator(Infected monster,Survivor personagem){ 
            boolean x = true;
-           int y = monster.getValue();
-           int func = personagem.plusFear(x,y);
-       return func;
+           int y = monster.Scare();
+           int z = personagem.getFear();
+           int w = z+y;
+           personagem.setFear(w);
     }
 
     public void setNome(String nome) {
@@ -74,5 +75,5 @@ public abstract class Infected {
        return agility;
    }
    
-   public abstract int getValue();
+   public abstract int Scare();
 }

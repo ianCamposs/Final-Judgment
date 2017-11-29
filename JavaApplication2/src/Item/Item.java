@@ -1,6 +1,8 @@
 
 package Item;
 
+import Personagem.Survivor;
+
 public abstract class Item {
     
     private String itemName;
@@ -39,5 +41,7 @@ public abstract class Item {
 
     public void setIntensity(int intensity) {
         this.intensity = intensity;
-    }   
+    }
+   
+    public abstract int usar(Item item, Survivor personagem);
 }

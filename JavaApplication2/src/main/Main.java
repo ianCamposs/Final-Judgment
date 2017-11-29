@@ -5,6 +5,7 @@ package main;
 import Item.Backpack;
 import Item.Guns;
 import Item.Item;
+import Item.ItemAdrenaline;
 import Item.ItemAntidote;
 import Item.ItemHeal;
 import Item.Knife;
@@ -63,11 +64,15 @@ public class Main {
         dog.FearGenerator(dog, personagem);
         System.out.println("O monstro era um katchoro que aumentou o medo do personagem para: "+ personagem.getFear());
         
+        System.out.println("Adrenaline: "+ personagem.getLife());
+        personagem.interactItem(potion, personagem);
+        System.out.println("Adrenaline: "+ personagem.getLife());
     }
     
     
 }
- /*System.out.println("Digite o nome do seu personagem: ");
+ /*
+        System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
         System.out.println("Digite qual classe do seu personagem: ");
         String b = entrada.nextLine();
@@ -79,4 +84,13 @@ public class Main {
         }else if(b.equals("Athlete")){
             Survivor personagem = new Athlete(a,30,1,40,50,10);
         }
-        NÃO DEU CERTO ISSO ACIMA, MAS QUANDO FOR IMPLEMENTAR NO PROGRAMA, VAI SER ALGO ASSIM MAS COM UMA CLASSE MENU PARA FAZER ISSO.*/ 
+        NÃO DEU CERTO ISSO ACIMA, MAS QUANDO FOR IMPLEMENTAR NO PROGRAMA, VAI SER ALGO ASSIM MAS COM UMA CLASSE MENU PARA FAZER ISSO.
+================================================================================================================================================    
+BASICO DO COMBATE
+        System.out.println("Combate, vida do dog: "+ dog.getLife());
+        int x = personagem.getPrimaria().getIntensity();
+        int y = dog.getLife();
+        int z = y-x;                                            TODO: FALTA COLOCAR A PRECISAO, INTERFACE NO COMBATE ENTRE PERSONAGEM E MONSTRO.
+        dog.setLife(z);
+        System.out.println("Vida final: "+ dog.getLife());
+        */

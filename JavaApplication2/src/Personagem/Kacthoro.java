@@ -16,7 +16,7 @@ public class Kacthoro extends Infected{
     }
 
     @Override
-    public int getValue() {
+    public int Scare() {
         return 3;
     }
     
