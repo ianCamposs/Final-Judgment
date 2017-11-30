@@ -25,7 +25,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
-        Survivor personagem = new Soldier(a,30,1,40,50,10);
+        Survivor personagem = new Soldier(a,30,5,40,50,10);
         Infected dog = new Kacthoro("dog",50,10,10,10,10);
         System.out.println("Equipando itens na mochila: \n");
         personagem.setBackpack(new Backpack(15,40));
@@ -67,6 +67,11 @@ public class Main {
         System.out.println("Usou pote de hp, alterando seu antigo hp: "+ personagem.getLife());
         personagem.interactItem(potion, personagem);
         System.out.println("Para esse novo hp: "+ personagem.getLife());
+        
+        System.out.println("Usou pote de anti-infecção, alterando sua antiga infecçao: "+ personagem.getInfection());
+        personagem.interactItem(antidote, personagem);
+        System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
+        
     }
     
     

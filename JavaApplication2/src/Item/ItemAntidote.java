@@ -33,6 +33,14 @@ public class ItemAntidote extends Item {
 
     @Override
     public int usar(Item item, Survivor personagem) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int x = personagem.getInfection();
+        int y = item.getIntensity();
+        int z = x-y;
+        if(z<0){
+            z = 0;
+            personagem.setInfection(z);
+        }else
+            personagem.setInfection(z);
+        return z;
     }
 }
