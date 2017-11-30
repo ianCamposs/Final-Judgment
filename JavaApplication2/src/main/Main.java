@@ -5,7 +5,7 @@ package main;
 import Item.Backpack;
 import Item.Guns;
 import Item.Item;
-import Item.ItemAdrenaline;
+//import Item.ItemAdrenaline;
 import Item.ItemAntidote;
 import Item.ItemHeal;
 import Item.Knife;
@@ -13,7 +13,7 @@ import Item.Rifle;
 import Item.Weapons;
 import Personagem.Infected;
 import Personagem.Kacthoro;
-import Personagem.Screamer;
+//import Personagem.Screamer;
 import Personagem.Soldier;
 import Personagem.Survivor;
 import java.util.Scanner;
@@ -64,9 +64,9 @@ public class Main {
         dog.FearGenerator(dog, personagem);
         System.out.println("O monstro era um katchoro que aumentou o medo do personagem para: "+ personagem.getFear());
         
-        System.out.println("Adrenaline: "+ personagem.getLife());
+        System.out.println("Usou pote de hp, alterando seu antigo hp: "+ personagem.getLife());
         personagem.interactItem(potion, personagem);
-        System.out.println("Adrenaline: "+ personagem.getLife());
+        System.out.println("Para esse novo hp: "+ personagem.getLife());
     }
     
     

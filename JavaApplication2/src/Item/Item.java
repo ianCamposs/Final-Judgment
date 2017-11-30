@@ -4,7 +4,12 @@ package Item;
 import Personagem.Survivor;
 
 public abstract class Item {
-    
+    /**
+     * intensity serve para tanto o ataque das armas quanto a restauração dos atributos do personagem
+     * Ex:
+     *      Se itemheal tiver intensidade 10, vai curar em 10 a vida do personagem.
+     *      Ja se a arma tiver intensidade 10, vai tirar 10 de dano do monstro atacado.
+     */
     private String itemName;
     private int weight;
     private int capacity;

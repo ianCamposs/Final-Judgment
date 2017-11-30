@@ -76,4 +76,5 @@ public abstract class Infected {
    }
    
    public abstract int Scare();
+   
 }

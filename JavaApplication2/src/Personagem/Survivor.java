@@ -24,20 +24,7 @@ public abstract class Survivor {
        this.precision = precision;
        this.agility = agility;
        this.fear = fear;
-   }
-
-   public int plusFear(boolean a, int x){
-       if (a == true){
-           this.fear = this.fear+x;
-       }else if (a == false){
-           if( this.fear < x){
-               this.fear = 0;
-           }else
-               this.fear = this.fear-x;
-       }
-       return this.fear;
-   };
-   
+   } 
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -113,7 +100,6 @@ public abstract class Survivor {
 
     public void interactItem(Item item, Survivor personagem){
         item.usar(item, personagem);
-        System.out.println("usado");
     }
     
 }
