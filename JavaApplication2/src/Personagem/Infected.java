@@ -79,7 +79,7 @@ public abstract class Infected {
    
    public abstract int Scare();
    
-   public int atacar(Survivor personagem){
+   public void atacar(Survivor personagem){
         int survivorlife = personagem.getLife();                                            //VIDA PERSONAGEM
         double survivorinfection = personagem.getInfection();                               //INFECÇÃO DO PERSONAGEM
         int calculodedano = (int) (this.attack + this.attack * (this.infection/100));       //EQUAÇAO PRA CALCULAR O DANO QUE SERÁ RETIRADO DA VIDA DO PERSONAGEM
@@ -93,6 +93,5 @@ public abstract class Infected {
         }   
         double infectando = survivorinfection + x;                                          //INCREMENTANDO O NOVO VALOR DE INFECÇÃO DO PERSONAGEM
         personagem.setInfection(infectando);                                                //SETANDO O MESMO
-        return damage;                                                                      //RETORNA A NOVA VIDA
     }
 }

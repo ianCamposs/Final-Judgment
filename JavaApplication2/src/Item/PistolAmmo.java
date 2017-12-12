@@ -5,10 +5,21 @@
  */
 package Item;
 
+import Personagem.Survivor;
+
 /**
  *
  * @author Usuario
  */
-public class PistolAmmo {
+public class PistolAmmo extends Ammunition {
+
+    public PistolAmmo(String name, int weight, int capacity, int intensity, int balas) {
+        super(name, weight, capacity, intensity, balas);
+    }
+
+    @Override
+    public int usar(Item item, Survivor personagem) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

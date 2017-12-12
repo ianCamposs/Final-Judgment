@@ -102,14 +102,13 @@ public abstract class Survivor {
         item.usar(item, personagem);
     }
     
-    public int atacar(Infected monstro, Item arma){
+    public void atacar(Infected monstro, Item arma){
         int monsterlife = monstro.getLife();                    // Pego a vida do mosntro
         double monsterdefense = monstro.getDefense()/100;       // Acrescento o porcento da defesa,
         monsterlife += (int) (monsterlife*monsterdefense);      // Faço um calculo para que a defesa influencie na quantidade de vida do monstro
         int survivorattack = arma.getIntensity();               // Declaro também o ataque do personagem
         int damage = monsterlife - survivorattack;              // E entao, é feito o dano à vida auxiliada pela defesa do monstro por meio do ataque do personagem.
         monstro.setLife(damage);                                // Então é declarada a nova vida do monstro, dependendo do calculo feito na equaçao
-        return damage;                                          // Retornando quanto de vida o monstro ficou.
     }
     
 }

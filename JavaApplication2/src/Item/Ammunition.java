@@ -11,8 +11,19 @@ package Item;
  */
 public abstract class Ammunition extends Item {
     
-    public Ammunition(String name, int weight, int capacity, int intensity) {
+    int balas;
+    public Ammunition(String name, int weight, int capacity, int intensity, int balas) {
         super(name, weight, capacity, intensity);
+        this.balas = balas;
     }
+
+    public int getBalas() {
+        return balas;
+    }
+
+    public void setBalas(int balas) {
+        this.balas = balas;
+    }
+    
     
 }

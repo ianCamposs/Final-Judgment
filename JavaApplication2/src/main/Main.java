@@ -72,6 +72,7 @@ public class Main {
         personagem.interactItem(antidote, personagem);
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         
+        
     }
     
     
