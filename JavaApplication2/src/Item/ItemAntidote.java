@@ -33,9 +33,9 @@ public class ItemAntidote extends Item {
 
     @Override
     public int usar(Item item, Survivor personagem) {
-        int x = personagem.getInfection();
+        double x = personagem.getInfection();
         int y = item.getIntensity();
-        int z = x-y;
+        int z = (int) (x-y);
         if(z<0){
             z = 0;
             personagem.setInfection(z);

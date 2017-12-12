@@ -5,15 +5,13 @@
  */
 package Personagem;
 
-import Personagem.Survivor;
-
 /**
  *
  * @author 201604940043
  */
 public class Athlete extends Survivor{ //Rapido
 
-    public Athlete(String nome, int life, int infection, int precision, int agility, int fear){
+    public Athlete(String nome, int life, double infection, int precision, int agility, int fear){
         super(nome, life, infection, precision, agility * 2, fear);
     }
     

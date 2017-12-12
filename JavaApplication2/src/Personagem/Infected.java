@@ -1,6 +1,8 @@
 
 package Personagem;
 
+import Item.Item;
+
 public abstract class Infected {
     
    private String nome; 
@@ -77,4 +79,20 @@ public abstract class Infected {
    
    public abstract int Scare();
    
+   public int atacar(Survivor personagem){
+        int survivorlife = personagem.getLife();                                            //VIDA PERSONAGEM
+        double survivorinfection = personagem.getInfection();                               //INFECÇÃO DO PERSONAGEM
+        int calculodedano = (int) (this.attack + this.attack * (this.infection/100));       //EQUAÇAO PRA CALCULAR O DANO QUE SERÁ RETIRADO DA VIDA DO PERSONAGEM
+        int damage = survivorlife - calculodedano;                                          //RETIRANDO VIDA DO PERSONAGEM
+        personagem.setLife(damage);                                                         //SETANDO NOVA VIDA
+        double x = (survivorinfection*(this.infection/100));                                //CALCULO DO VALOR QUE SERÁ USADO PARA ACRESCENTAR NA INFECÇÃO DO PERSONAGEM
+        if((x > 0.7)&&(x < 1)){
+            x = 1;
+        }else if((x > 0)&&(x < 0.5)){                                                                  //ARREDONDAMENTOS
+            x = 0.5;
+        }   
+        double infectando = survivorinfection + x;                                          //INCREMENTANDO O NOVO VALOR DE INFECÇÃO DO PERSONAGEM
+        personagem.setInfection(infectando);                                                //SETANDO O MESMO
+        return damage;                                                                      //RETORNA A NOVA VIDA
+    }
 }
