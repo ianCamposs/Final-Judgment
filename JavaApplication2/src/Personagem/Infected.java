@@ -1,7 +1,6 @@
 
 package Personagem;
 
-import Item.Item;
 
 public abstract class Infected {
     
@@ -21,8 +20,7 @@ public abstract class Infected {
        this.agility = agility;
    }
    
-   public void FearGenerator(Infected monster,Survivor personagem){ 
-           boolean x = true;
+   public void FearGenerator(Infected monster,Survivor personagem){
            int y = monster.Scare();
            int z = personagem.getFear();
            int w = z+y;
@@ -86,7 +84,7 @@ public abstract class Infected {
         int damage = survivorlife - calculodedano;                                          //RETIRANDO VIDA DO PERSONAGEM
         personagem.setLife(damage);                                                         //SETANDO NOVA VIDA
         double x = (survivorinfection*(this.infection/100));                                //CALCULO DO VALOR QUE SERÁ USADO PARA ACRESCENTAR NA INFECÇÃO DO PERSONAGEM
-        if((x > 0.7)&&(x < 1)){
+        if((x > 0.5)&&(x < 1)){
             x = 1;
         }else if((x > 0)&&(x < 0.5)){                                                                  //ARREDONDAMENTOS
             x = 0.5;

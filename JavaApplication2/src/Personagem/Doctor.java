@@ -5,8 +5,6 @@
  */
 package Personagem;
 
-import Personagem.Survivor;
-
 /**
  *
  * @author 201604940043
