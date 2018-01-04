@@ -58,5 +58,13 @@ public class Backpack {
         }
         return itens;
     }
+
+    public int getActualyCapacity() {
+        return actualyCapacity;
+    }
+
+    public void setActualyCapacity(int actualyCapacity) {
+        this.actualyCapacity = actualyCapacity;
+    }
     
 }
