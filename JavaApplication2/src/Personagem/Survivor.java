@@ -1,5 +1,6 @@
 package Personagem;
 
+import java.util.Random;
 import Item.Backpack;
 import Item.Guns;
 import Item.Item;
@@ -109,6 +110,16 @@ public abstract class Survivor {
         int survivorattack = arma.getIntensity();               // Declaro também o ataque do personagem
         int damage = monsterlife - survivorattack;              // E entao, é feito o dano à vida auxiliada pela defesa do monstro por meio do ataque do personagem.
         monstro.setLife(damage);                                // Então é declarada a nova vida do monstro, dependendo do calculo feito na equaçao
+    }
+    
+    public void buscar(Survivor personagem, Item item){
+        Random gerador = new Random();
+        if(personagem.agility >= gerador.nextInt(100)){
+            System.out.println("foi encontrado um item");
+            insertItem(Item item);
+        }else{
+            System.out.println("não foi encontrado nenhum item");
+        }
     }
     
 }

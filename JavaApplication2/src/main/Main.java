@@ -18,6 +18,7 @@ import Personagem.Soldier;
 import Personagem.Survivor;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
@@ -72,6 +73,27 @@ public class Main {
         personagem.interactItem(antidote, personagem);
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         
+        int x;
+        do{
+            System.out.println("Informe a ação que desejas executar:");
+            System.out.println("1 para procurar itens");
+            System.out.println("2 para acessar a mochila");
+            System.out.println("3 para procurar um inimigo");
+            Scanner scanner = new Scanner(System.in);  
+            x = scanner.nextInt();
+            if(x==1){
+                System.out.println("Procurando item");
+            }
+            if(x==2){
+                System.out.println("Acessando a mochila");
+            }
+            if(x==3){
+                System.out.println("Procurando um infectado");
+            }
+
+        }while (x!=0);
+        
+       
         
     }
     
