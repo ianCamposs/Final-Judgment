@@ -11,8 +11,8 @@ package Ambient;
  */
 public class TravelSpace extends Ambient {
     
-    public TravelSpace(String name, int monsters, int items) {
-        super(name, monsters, items);
+    public TravelSpace(int monsters) {
+        super(monsters);
     }
     
 }

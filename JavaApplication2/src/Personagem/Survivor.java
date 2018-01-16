@@ -120,7 +120,7 @@ public abstract class Survivor {
         Random gerador = new Random();
         Random gerador4 = new Random();
         int it;
-        if(personagem.agility >= gerador.nextInt(100)){
+        if(personagem.agility <= gerador.nextInt(100)){
             System.out.println("foi encontrado um item");
             it = gerador4.nextInt(4);
             if(it == 0){

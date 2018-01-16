@@ -79,16 +79,16 @@ public class Main {
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         */
         Survivor personagem = new Soldier("a",30,5,40,50,10);
-        City cidade = new City("Disney",5,5);
+       
         int x;
         int contM = 0;
-        int contI = 0;
         int monst1;
         int monst2;
         Backpack mochila = null;
-        
+        City cidade = new City(5);
         do
         {
+            int monstr;
             System.out.println("Informe a ação que desejas executar:");
             System.out.println("0 para fechar o jogo");
             System.out.println("1 para procurar itens");
@@ -98,9 +98,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);  
             x = scanner.nextInt();
             if(x==1){
-                
                 System.out.println("Procurando item");
-                
                 personagem.buscar(personagem, mochila);
                 Random gerador1 = new Random();
                 Random gerador2 = new Random();
@@ -125,7 +123,7 @@ public class Main {
                 String b;
                 System.out.println("Desejas retirar um item da mochila?");
                 b = scanner.next();
-                if(b=="sim"){
+                if(b.equals("sim")){
                     System.out.println("informe o índice do item que desejas remover:");
                     int aux = scanner.nextInt();
                     personagem.getBackpack().removeItem(aux);
@@ -151,9 +149,12 @@ public class Main {
                     System.out.println("todos os monstros da área já foram mortos");
                 }
             }
+            
             if(x==4){
+                Random gerador6 = new Random();
                 System.out.println("Indo até a nova área");
-                
+                monstr = gerador6.nextInt(20);
+                cidade.setMonsters(monstr);
             }
 
         }while (x!=0);
@@ -163,7 +164,7 @@ public class Main {
     }
 }
     
-    
+        
 
  /*
         System.out.println("Digite o nome do seu personagem: ");

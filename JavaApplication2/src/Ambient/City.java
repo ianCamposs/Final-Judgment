@@ -11,11 +11,16 @@ package Ambient;
  */
 public class City extends Ambient {
     
-    public City(String name, int monsters, int items) {
-        super(name, monsters, items);
+    public City(int monsters) {
+        super(monsters);
     }
     
     public int monstros() {
         return monsters;
     }
+
+    public void setMonsters(int monsters) {
+        this.monsters = monsters;
+    }
+    
 }

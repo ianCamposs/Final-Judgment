@@ -11,33 +11,20 @@ package Ambient;
  */
 public abstract class Ambient {
     
-    String name;
+   
     int monsters; // falta ver se é isso mesmo que tem que fazer, se vai ser public/private/protected...
-    int items;
     //Pensei assim, deixa um int monsters, ai esse valor que for passado no parametro 
     //vai ser uma string de monstros que vai ser criado na main :D
     
     //
     // To pensando em a gente fazer ja pre definido futuramente, colocando um for e tal... mas vou ter que ver como criam varios objetos com valores diferentes da mesma classe.
-    public Ambient(String name, int monsters , int items){
-        this.name = name;
+    public Ambient(int monsters){
         this.monsters = monsters;
-        this.items = items;
+
     }
-    
-    public String setName(){
-        return this.name;
-        
-    }
-    
     public int setMonsters(){
         return this.monsters;
     }
-    
-    public int setItems(){
-        return this.items;
-    }
-    
     
     
     
