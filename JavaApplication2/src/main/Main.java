@@ -79,7 +79,8 @@ public class Main {
         City cidade = new City("Disney",5,5);
         int x;
         int cont = 0;
-        int monst;
+        int monst1;
+        int monst2;
         do{
             System.out.println("Informe a ação que desejas executar:");
             System.out.println("1 para procurar itens");
@@ -94,21 +95,22 @@ public class Main {
                 Random gerador1 = new Random();
                 Random gerador2 = new Random();
                 if(gerador1.nextInt(100) <= 50 && cont <= cidade.monstros()){
-                    monst = gerador2.nextInt(3);
-                    if(monst == 0){
+                    monst1 = gerador2.nextInt(3);
+                    if(monst1 == 0){
                         Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
                     }
-                    if(monst == 1){
+                    if(monst1 == 1){
                         Infected cachorro = new Kacthoro("AUUUUUUUUU",50,10,10,10,10);
                     }
-                    if(monst == 2){
+                    if(monst1 == 2){
                         Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
                     }
+                    cont++;
                 }
             }
             if(x==2){
                 System.out.println("Acessando a mochila");
-                //"list items"
+                //"list items"R
                 String b;
                 System.out.println("Desejas retirar um item da mochila?");
                 b = scanner.next();
@@ -116,12 +118,27 @@ public class Main {
                    // "removeItem(indice item)"
                 }     
             }
+            
             if(x==3){
                 System.out.println("Procurando um infectado");
-                
+                Random gerador3 = new Random();  
+                if(cont <= cidade.monstros()){
+                    monst2 = gerador3.nextInt(3);
+                    if(monst2 == 0){
+                        Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
+                    }
+                    if(monst2 == 1){
+                        Infected cachorro = new Kacthoro("AUUUUUUUUU",50,10,10,10,10);
+                    }
+                    if(monst2 == 2){
+                        Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
+                    }
+                    cont++;    
+                }
             }
             if(x==4){
                 System.out.println("Indo até a nova área");
+                
             }
 
         }while (x!=0);

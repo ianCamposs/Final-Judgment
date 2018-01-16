@@ -4,6 +4,10 @@ import java.util.Random;
 import Item.Backpack;
 import Item.Guns;
 import Item.Item;
+import Item.ItemAdrenaline;
+import Item.ItemAntidote;
+import Item.ItemHeal;
+import Item.Pistol;
 import Item.Weapons;
         
 public abstract class Survivor {
@@ -114,9 +118,27 @@ public abstract class Survivor {
     
     public void buscar(Survivor personagem, Backpack mochila, Item items){
         Random gerador = new Random();
+        Random gerador4 = new Random();
+        int it;
         if(personagem.agility >= gerador.nextInt(100)){
             System.out.println("foi encontrado um item");
-            insertItem(Item items);
+            it = gerador4.nextInt(4);
+            if(it == 0){
+                Item antidote = new ItemAntidote("A-INF",1,1,5);
+                 personagem.getBackpack().insertItem(antidote);
+            }
+            if(it == 1){
+                Item heal = new ItemHeal("Kit-médico",1,1,5);
+                 personagem.getBackpack().insertItem(heal);
+            }
+            if(it == 2){
+                Item adrenalina = new ItemAdrenaline("adrenalina",1,1,5);
+                 personagem.getBackpack().insertItem(adrenalina);
+            }
+            if(it == 3){
+                Item arma = new Pistol("DesertEagle",1,1,5);
+                personagem.getBackpack().insertItem(arma);
+            }
         }else{
             System.out.println("não foi encontrado nenhum item");
         }
