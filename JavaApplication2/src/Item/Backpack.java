@@ -44,6 +44,7 @@ public class Backpack {
     public Item removeItem(int indice){
         try{
             Item item = items.remove(indice);
+            item.usar(item, personagem);
             actualyWeight -= item.getWeight();
             actualyCapacity--;
             return item;

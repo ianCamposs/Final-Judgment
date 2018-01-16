@@ -116,7 +116,7 @@ public abstract class Survivor {
         monstro.setLife(damage);                                // Então é declarada a nova vida do monstro, dependendo do calculo feito na equaçao
     }
     
-    public void buscar(Survivor personagem, Backpack mochila){
+    public void buscar(Survivor personagem){
         Random gerador = new Random();
         Random gerador4 = new Random();
         int it;

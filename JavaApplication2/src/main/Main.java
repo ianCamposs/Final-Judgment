@@ -86,82 +86,100 @@ public class Main {
         int contM = 0;
         int monst1;
         int monst2;
-        Backpack mochila = null;
+        personagem.setBackpack(new Backpack(15,40));
         City cidade = new City(5);
+        Item m4a1 = new Rifle("m4a1",5,5,5);
+        Item potion = new ItemHeal("HP",1,1,5);
+        Item knife = new Knife("knife",3,3,5);
+        Item antidote = new ItemAntidote("A-INF",1,1,5);
+        personagem.getBackpack().insertItem(m4a1);
+        personagem.getBackpack().insertItem(potion);
+        personagem.getBackpack().insertItem(knife);
+        personagem.getBackpack().insertItem(antidote);
         do
         {
-            int monstr;
             System.out.println("Informe a ação que desejas executar:");
             System.out.println("0 para fechar o jogo");
             System.out.println("1 para procurar itens");
             System.out.println("2 para acessar a mochila");
             System.out.println("3 para procurar um inimigo");
-            System.out.println("4 para acessar um nova área");
             Scanner scanner = new Scanner(System.in);  
             x = scanner.nextInt();
             if(x==1){
                 System.out.println("Procurando item");
-                personagem.buscar(personagem, mochila);
+                personagem.buscar(personagem);
                 Random gerador1 = new Random();
                 Random gerador2 = new Random();
                 if(gerador1.nextInt(100) <= 50 && contM <= cidade.monstros()){
                     monst1 = gerador2.nextInt(3);
                     if(monst1 == 0){
                         Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
+                        grito.FearGenerator(grito, personagem);
                         comb(personagem, grito, arma);
                     }
                     if(monst1 == 1){
                         Infected cachorro = new Kacthoro("AUUUUUUUUU",50,10,10,10,10);
+                        cachorro.FearGenerator(cachorro, personagem);
                         comb(personagem, cachorro, arma);
                     }
                     if(monst1 == 2){
                         Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
+                        tank.FearGenerator(tank, personagem);
                         comb(personagem, tank, arma);
                     }
                     contM++;
                 }
             }
+            
             if(x==2){
                 System.out.println("Acessando a mochila");
                 String[] items = personagem.getBackpack().listItems();
                 System.out.println(Arrays.toString(items));
-                String b;
-                System.out.println("Desejas retirar um item da mochila?");
-                b = scanner.next();
-                if(b.equals("sim")){
+                int b;
+                System.out.println("Para remover um item, digite 1");
+                System.out.println("Para usar um item, digite 2");
+                b = scanner.nextInt();
+                if(b==1){
                     System.out.println("informe o índice do item que desejas remover:");
                     int aux = scanner.nextInt();
                     personagem.getBackpack().removeItem(aux);
-                }     
+                }
+                if(b==2){
+                    System.out.println("informe o item que desejas usar:");
+                    
+                    //personagem.interactItem(items[0], personagem);
+                }
             }
             
             if(x==3){
                 System.out.println("Procurando um infectado");
                 Random gerador3 = new Random();  
                 if(contM <= cidade.monstros()){
+                    System.out.println("Um inimigo foi encontrado");
                     monst2 = gerador3.nextInt(3);
                     if(monst2 == 0){
-                        Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
+                        Infected grito = new Screamer("gritador",50,10,10,10,10);
+                        System.out.println("É um Screamer");
+                        grito.FearGenerator(grito, personagem);
+                        comb(personagem, grito, arma);
                     }
                     if(monst2 == 1){
-                        Infected cachorro = new Kacthoro("AUUUUUUUUU",50,10,10,10,10);
+                        Infected cachorro = new Kacthoro("cachoro",50,10,10,10,10);
+                        System.out.println("É um katchoro");
+                        cachorro.FearGenerator(cachorro, personagem);
+                        comb(personagem, cachorro, arma);
                     }
                     if(monst2 == 2){
-                        Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
+                        Infected tank = new Panzer("panzer",50,10,10,10,10);
+                        System.out.println("É um Panzer");
+                        tank.FearGenerator(tank, personagem);
+                        comb(personagem, tank, arma);
                     }
                     contM++;    
                 }else{
                     System.out.println("todos os monstros da área já foram mortos");
                 }
             }
-            
-            if(x==4){
-                Random gerador6 = new Random();
-                System.out.println("Indo até a nova área");
-                monstr = gerador6.nextInt(20);
-                cidade.setMonsters(monstr);
-            }
-
         }while (x!=0);
         
        
@@ -169,16 +187,20 @@ public class Main {
     }
     public static void comb(Survivor personagem, Infected monster, Item arma){
            int c = 1;
+           while(c != 0){
            Random value = new Random();
            int num = value.nextInt(50);
-           while(c != 0){
            if(num%2 == 0){
                personagem.atacar(monster, arma);
+               System.out.println("o personagem atacou o monstro.");
            }else{
                monster.atacar(personagem);
+               System.out.println("o monstro atacou o personagem.");
            }
            int x = personagem.getLife();
            int y = monster.getLife();
+           System.out.println("a vida do personagem é:"+x);
+           System.out.println("a vida do infectado é:"+y);
            if(x <= 0 || y <= 0){
                c = 0;
            }
