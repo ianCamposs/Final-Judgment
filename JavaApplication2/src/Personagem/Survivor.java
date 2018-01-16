@@ -112,11 +112,11 @@ public abstract class Survivor {
         monstro.setLife(damage);                                // Então é declarada a nova vida do monstro, dependendo do calculo feito na equaçao
     }
     
-    public void buscar(Survivor personagem, Item item){
+    public void buscar(Survivor personagem, Backpack mochila, Item items){
         Random gerador = new Random();
         if(personagem.agility >= gerador.nextInt(100)){
             System.out.println("foi encontrado um item");
-            insertItem(Item item);
+            insertItem(Item items);
         }else{
             System.out.println("não foi encontrado nenhum item");
         }

@@ -2,6 +2,7 @@ package main;
 
 //import Personagem.Athlete;
 //import Personagem.Doctor;
+import Ambient.City;
 import Item.Backpack;
 import Item.Guns;
 import Item.Item;
@@ -13,6 +14,8 @@ import Item.Rifle;
 import Item.Weapons;
 import Personagem.Infected;
 import Personagem.Kacthoro;
+import Personagem.Panzer;
+import Personagem.Screamer;
 //import Personagem.Screamer;
 import Personagem.Soldier;
 import Personagem.Survivor;
@@ -73,22 +76,52 @@ public class Main {
         personagem.interactItem(antidote, personagem);
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         
+        City cidade = new City("Disney",5,5);
         int x;
+        int cont = 0;
+        int monst;
         do{
             System.out.println("Informe a ação que desejas executar:");
             System.out.println("1 para procurar itens");
             System.out.println("2 para acessar a mochila");
             System.out.println("3 para procurar um inimigo");
+            System.out.println("4 para acessar um nova área");
             Scanner scanner = new Scanner(System.in);  
             x = scanner.nextInt();
             if(x==1){
                 System.out.println("Procurando item");
+                personagem.buscar(personagem, potion, items);
+                Random gerador1 = new Random();
+                Random gerador2 = new Random();
+                if(gerador1.nextInt(100) <= 50 && cont <= cidade.monstros()){
+                    monst = gerador2.nextInt(3);
+                    if(monst == 0){
+                        Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
+                    }
+                    if(monst == 1){
+                        Infected cachorro = new Kacthoro("AUUUUUUUUU",50,10,10,10,10);
+                    }
+                    if(monst == 2){
+                        Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
+                    }
+                }
             }
             if(x==2){
                 System.out.println("Acessando a mochila");
+                //"list items"
+                String b;
+                System.out.println("Desejas retirar um item da mochila?");
+                b = scanner.next();
+                if(b=="sim"){
+                   // "removeItem(indice item)"
+                }     
             }
             if(x==3){
                 System.out.println("Procurando um infectado");
+                
+            }
+            if(x==4){
+                System.out.println("Indo até a nova área");
             }
 
         }while (x!=0);

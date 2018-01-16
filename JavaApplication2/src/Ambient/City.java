@@ -15,4 +15,7 @@ public class City extends Ambient {
         super(name, monsters, items);
     }
     
+    public int monstros() {
+        return monsters;
+    }
 }
