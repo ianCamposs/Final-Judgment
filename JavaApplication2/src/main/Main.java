@@ -207,6 +207,7 @@ public class Main {
            }        
     }
 }
+//fala um a pra vc ver
    
  /*
         System.out.println("Digite o nome do seu personagem: ");
