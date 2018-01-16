@@ -24,8 +24,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-    /*
+    
     public static void main(String[] args) {
+        /*
+    }
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
@@ -83,7 +85,10 @@ public class Main {
         int contI = 0;
         int monst1;
         int monst2;
-        do{
+        Backpack mochila = null;
+        
+        do
+        {
             System.out.println("Informe a ação que desejas executar:");
             System.out.println("0 para fechar o jogo");
             System.out.println("1 para procurar itens");
@@ -93,8 +98,9 @@ public class Main {
             Scanner scanner = new Scanner(System.in);  
             x = scanner.nextInt();
             if(x==1){
+                
                 System.out.println("Procurando item");
-                Backpack mochila = null;
+                
                 personagem.buscar(personagem, mochila);
                 Random gerador1 = new Random();
                 Random gerador2 = new Random();
@@ -114,12 +120,15 @@ public class Main {
             }
             if(x==2){
                 System.out.println("Acessando a mochila");
-                //"list items"R
+                String[] items = personagem.getBackpack().listItems();
+                System.out.println(Arrays.toString(items));
                 String b;
                 System.out.println("Desejas retirar um item da mochila?");
                 b = scanner.next();
                 if(b=="sim"){
-                   // "removeItem(indice item)"
+                    System.out.println("informe o índice do item que desejas remover:");
+                    int aux = scanner.nextInt();
+                    personagem.getBackpack().removeItem(aux);
                 }     
             }
             
@@ -152,6 +161,7 @@ public class Main {
        
         
     }
+}
     
     
 

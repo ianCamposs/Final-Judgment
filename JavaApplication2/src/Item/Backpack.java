@@ -18,6 +18,7 @@ public class Backpack {
     private int actualyWeight;
     private int actualyCapacity;
     private ArrayList<Item> items;
+    public int i;
     
     public Backpack(int limitWeight, int limitCapacity){
         this.limitWeight = limitWeight;
@@ -53,7 +54,7 @@ public class Backpack {
 
     public String[] listItems(){
         String[] itens = new String[actualyCapacity];
-        for (int i=0; i<actualyCapacity; i++) {
+        for ( i=0; i<actualyCapacity; i++) {
             itens[i] = this.items.get(i).getItemName();
         }
         return itens;
