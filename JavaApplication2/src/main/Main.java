@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-
+    /*
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite o nome do seu personagem: ");
@@ -75,14 +75,17 @@ public class Main {
         System.out.println("Usou pote de anti-infecção, alterando sua antiga infecçao: "+ personagem.getInfection());
         personagem.interactItem(antidote, personagem);
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
-        
+        */
+        Survivor personagem = new Soldier("a",30,5,40,50,10);
         City cidade = new City("Disney",5,5);
         int x;
-        int cont = 0;
+        int contM = 0;
+        int contI = 0;
         int monst1;
         int monst2;
         do{
             System.out.println("Informe a ação que desejas executar:");
+            System.out.println("0 para fechar o jogo");
             System.out.println("1 para procurar itens");
             System.out.println("2 para acessar a mochila");
             System.out.println("3 para procurar um inimigo");
@@ -91,10 +94,11 @@ public class Main {
             x = scanner.nextInt();
             if(x==1){
                 System.out.println("Procurando item");
-                personagem.buscar(personagem, potion, items);
+                Backpack mochila = null;
+                personagem.buscar(personagem, mochila);
                 Random gerador1 = new Random();
                 Random gerador2 = new Random();
-                if(gerador1.nextInt(100) <= 50 && cont <= cidade.monstros()){
+                if(gerador1.nextInt(100) <= 50 && contM <= cidade.monstros()){
                     monst1 = gerador2.nextInt(3);
                     if(monst1 == 0){
                         Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
@@ -105,7 +109,7 @@ public class Main {
                     if(monst1 == 2){
                         Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
                     }
-                    cont++;
+                    contM++;
                 }
             }
             if(x==2){
@@ -122,7 +126,7 @@ public class Main {
             if(x==3){
                 System.out.println("Procurando um infectado");
                 Random gerador3 = new Random();  
-                if(cont <= cidade.monstros()){
+                if(contM <= cidade.monstros()){
                     monst2 = gerador3.nextInt(3);
                     if(monst2 == 0){
                         Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
@@ -133,7 +137,9 @@ public class Main {
                     if(monst2 == 2){
                         Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
                     }
-                    cont++;    
+                    contM++;    
+                }else{
+                    System.out.println("todos os monstros da área já foram mortos");
                 }
             }
             if(x==4){
@@ -148,7 +154,7 @@ public class Main {
     }
     
     
-}
+
  /*
         System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
