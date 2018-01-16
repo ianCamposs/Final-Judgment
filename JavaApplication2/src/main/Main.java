@@ -78,8 +78,10 @@ public class Main {
         personagem.interactItem(antidote, personagem);
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         */
+        
         Survivor personagem = new Soldier("a",30,5,40,50,10);
-       
+        Item arma = new Rifle("ar",10,7,8);
+        arma.usar(arma, personagem);
         int x;
         int contM = 0;
         int monst1;
@@ -106,12 +108,15 @@ public class Main {
                     monst1 = gerador2.nextInt(3);
                     if(monst1 == 0){
                         Infected grito = new Screamer("AAAAAAAAAAA",50,10,10,10,10);
+                        comb(personagem, grito, arma);
                     }
                     if(monst1 == 1){
                         Infected cachorro = new Kacthoro("AUUUUUUUUU",50,10,10,10,10);
+                        comb(personagem, cachorro, arma);
                     }
                     if(monst1 == 2){
                         Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
+                        comb(personagem, tank, arma);
                     }
                     contM++;
                 }
@@ -162,10 +167,25 @@ public class Main {
        
         
     }
+    public static void comb(Survivor personagem, Infected monster, Item arma){
+           int c = 1;
+           Random value = new Random();
+           int num = value.nextInt(50);
+           while(c != 0){
+           if(num%2 == 0){
+               personagem.atacar(monster, arma);
+           }else{
+               monster.atacar(personagem);
+           }
+           int x = personagem.getLife();
+           int y = monster.getLife();
+           if(x <= 0 || y <= 0){
+               c = 0;
+           }
+           }        
+    }
 }
-    
-        
-
+   
  /*
         System.out.println("Digite o nome do seu personagem: ");
         String a =  entrada.nextLine();
