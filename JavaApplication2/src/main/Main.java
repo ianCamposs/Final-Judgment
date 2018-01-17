@@ -90,7 +90,7 @@ public class Main {
         personagem.setBackpack(new Backpack(15,40));
         City cidade = new City(5);
         Item m4a1 = new Rifle("m4a1",5,5,5);
-        Item potion = new ItemHeal("HP",1,1,5);
+        Item potion = new ItemHeal("Kit-Médico",1,1,5);
         Item knife = new Knife("knife",3,3,5);
         Item antidote = new ItemAntidote("A-INF",1,1,5);
         personagem.getBackpack().insertItem(m4a1);
@@ -142,20 +142,23 @@ public class Main {
                 int b;
                 System.out.println("Para remover um item, digite 1");
                 System.out.println("Para usar um item, digite 2");
+                System.out.println("Para sair da mochila aperte 3");
                 b = scanner.nextInt();
                 if(b==1){
-                    System.out.println("informe o índice do item que desejas remover:");
+                    System.out.println("\ninforme o índice do item que desejas remover:");
                     int aux = scanner.nextInt();
                     personagem.getBackpack().removeItem(aux);
                 }
                 if(b==2){
-                    System.out.println("informe o item que desejas usar:");
+                    System.out.println("\ninforme o item que desejas usar:");
                     itemdesejado = scanner.nextInt();
-                    Item i = personagem.getBackpack().removeItem(itemdesejado);
+                    Item i = personagem.getBackpack().removeItem(itemdesejado-1);
                     if(i instanceof Item){
                         Item item = (Item) i;
                         item.usar(item,personagem);
                     }
+                if(b==3){}
+                
                 }
             }
             
