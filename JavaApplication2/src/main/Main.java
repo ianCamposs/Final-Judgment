@@ -79,13 +79,14 @@ public class Main {
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         */
         
-        Survivor personagem = new Soldier("a",30,5,40,50,10);
+        Survivor personagem = new Soldier("a",100,5,40,50,10);
         Item arma = new Rifle("ar",10,7,8);
         arma.usar(arma, personagem);
         int x;
         int contM = 0;
         int monst1;
         int monst2;
+        int itemdesejado;
         personagem.setBackpack(new Backpack(15,40));
         City cidade = new City(5);
         Item m4a1 = new Rifle("m4a1",5,5,5);
@@ -128,6 +129,9 @@ public class Main {
                         comb(personagem, tank, arma);
                     }
                     contM++;
+                    if(personagem.getLife() <= 0){
+                        x = 0;
+                    }
                 }
             }
             
@@ -146,8 +150,12 @@ public class Main {
                 }
                 if(b==2){
                     System.out.println("informe o item que desejas usar:");
-                    
-                    //personagem.interactItem(items[0], personagem);
+                    itemdesejado = scanner.nextInt();
+                    Item i = personagem.getBackpack().removeItem(itemdesejado);
+                    if(i instanceof Item){
+                        Item item = (Item) i;
+                        item.usar(item,personagem);
+                    }
                 }
             }
             
@@ -155,27 +163,31 @@ public class Main {
                 System.out.println("Procurando um infectado");
                 Random gerador3 = new Random();  
                 if(contM <= cidade.monstros()){
-                    System.out.println("Um inimigo foi encontrado");
+                    System.out.println("Um inimigo foi encontrado\n");
+                    System.out.println("=========================");
                     monst2 = gerador3.nextInt(3);
                     if(monst2 == 0){
                         Infected grito = new Screamer("gritador",50,10,10,10,10);
-                        System.out.println("É um Screamer");
+                        System.out.println("É um Screamer\n");
                         grito.FearGenerator(grito, personagem);
                         comb(personagem, grito, arma);
                     }
                     if(monst2 == 1){
                         Infected cachorro = new Kacthoro("cachoro",50,10,10,10,10);
-                        System.out.println("É um katchoro");
+                        System.out.println("É um katchoro\n");
                         cachorro.FearGenerator(cachorro, personagem);
                         comb(personagem, cachorro, arma);
                     }
                     if(monst2 == 2){
                         Infected tank = new Panzer("panzer",50,10,10,10,10);
-                        System.out.println("É um Panzer");
+                        System.out.println("É um Panzer\n");
                         tank.FearGenerator(tank, personagem);
                         comb(personagem, tank, arma);
                     }
-                    contM++;    
+                    contM++; 
+                    if(personagem.getLife() <= 0){
+                        x=0;
+                    }
                 }else{
                     System.out.println("todos os monstros da área já foram mortos");
                 }
@@ -190,17 +202,19 @@ public class Main {
            while(c != 0){
            Random value = new Random();
            int num = value.nextInt(50);
-           if(num%2 == 0){
+           if((num%2 == 0)||(num <= 20) ){
                personagem.atacar(monster, arma);
-               System.out.println("o personagem atacou o monstro.");
+               System.out.println("==============ATAQUE==============\n");
+               System.out.println("o personagem atacou o monstro.\n");
            }else{
                monster.atacar(personagem);
-               System.out.println("o monstro atacou o personagem.");
+               System.out.println("==============DEFESA==============\n\n");
+               System.out.println("o monstro atacou o personagem.\n");
            }
            int x = personagem.getLife();
            int y = monster.getLife();
-           System.out.println("a vida do personagem é:"+x);
-           System.out.println("a vida do infectado é:"+y);
+           System.out.println("=> a vida do personagem é:"+x+"\n");
+           System.out.println("=> a vida do infectado é:"+y+"\n");
            if(x <= 0 || y <= 0){
                c = 0;
            }

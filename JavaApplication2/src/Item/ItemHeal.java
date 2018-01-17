@@ -43,7 +43,7 @@ public class ItemHeal extends Item {
         int y = personagem.getLife();
         int z = item.getIntensity();
         if(y == 100){
-            System.out.print("Your life is already full!");
+            System.out.print("Your life is already full!\n");
         }else{
             y += z;
             if(y>100)
