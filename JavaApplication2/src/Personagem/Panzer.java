@@ -15,7 +15,7 @@ public class Panzer extends Infected{
         super(nome, life+infection, attack+infection, defense+infection, infection, agility);
     }
 
-    sustoBeha = new SustoBirl();
+    //sustoBeha = new SustoBirl();
     
     @Override
     public int Scare() {

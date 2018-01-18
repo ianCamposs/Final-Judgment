@@ -79,8 +79,7 @@ public class Main {
         System.out.println("Para essa nova qntde de infecção: "+ personagem.getInfection());
         */
         
-        Infected tank = new Panzer("aa",1,2,3,4,5);
-        tank.performSusto();
+        
         Survivor personagem = new Soldier("a",100,5,40,50,10);
         Item arma = new Rifle("ar",10,7,8);
         arma.usar(arma, personagem);
@@ -126,7 +125,7 @@ public class Main {
                         comb(personagem, cachorro, arma);
                     }
                     if(monst1 == 2){
-                        Infected tank1 = new Panzer("BIIIRRRLLL",50,10,10,10,10);
+                        Infected tank = new Panzer("BIIIRRRLLL",50,10,10,10,10);
                         tank.FearGenerator(tank, personagem);
                         comb(personagem, tank, arma);
                     }
@@ -185,7 +184,7 @@ public class Main {
                         comb(personagem, cachorro, arma);
                     }
                     if(monst2 == 2){
-                        Infected tank1 = new Panzer("panzer",50,10,10,10,10);
+                        Infected tank = new Panzer("panzer",50,10,10,10,10);
                         System.out.println("É um Panzer\n");
                         tank.FearGenerator(tank, personagem);
                         comb(personagem, tank, arma);
