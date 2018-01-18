@@ -10,6 +10,8 @@ public abstract class Infected {
    private int defense;
    private int infection;
    private int agility;
+   SustoBeha sustoBeha;
+   
    
    public Infected(String nome,int life,int attack,int defense,int inffection, int agility){
        this.nome = nome;
@@ -20,13 +22,18 @@ public abstract class Infected {
        this.agility = agility;
    }
    
-   public void FearGenerator(Infected monster,Survivor personagem){
+   public void performSusto(){
+       sustoBeha.susto();
+   }
+           
+    public void FearGenerator(Infected monster,Survivor personagem){
+       System.out.println("O infectado surgiu! Causando um susto");
            int y = monster.Scare();
            int z = personagem.getFear();
            int w = z+y;
            personagem.setFear(w);
     }
-
+   
     public void setNome(String nome) {
         this.nome = nome;
     }

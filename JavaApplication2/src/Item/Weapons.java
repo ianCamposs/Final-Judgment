@@ -12,13 +12,14 @@ import Personagem.Survivor;
  * @author ian
  */
 public abstract class Weapons extends Item{
-   
+    
     protected Survivor personagem;
-    //this kind of item to do damage, will not consume ammunition
+    //this kind of item will need ammunition to use
     public Weapons(String name, int weight, int capacity, int intensity) {
         super(name, weight, capacity, intensity);
-    }
-
+    } 
+    
     public abstract void EquipWeapon(Survivor personagem);
+    
     
 }

@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package Personagem;
 
 /**
  *
- * @author 201604940043
+ * @author ian
  */
-public class Singleton {
+public class SustoGrito implements SustoBeha {
+    @Override
+    public void susto(){
+        System.out.println("AAAAAAAAAAAAAAAAAAAAA");
+    }
     
 }
