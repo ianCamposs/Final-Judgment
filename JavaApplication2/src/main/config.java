@@ -19,9 +19,9 @@ public class config {
     private int volumeambiente;
     private int FPS;
     
-    public static config instancia;
+    private static config instancia;
     
-    protected config(){
+    private config(){
     }
     
     public static config getInstancia(){
